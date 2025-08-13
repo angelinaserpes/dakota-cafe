@@ -4,9 +4,9 @@ import { Bean } from "lucide-react";
 
 const navItems = [
   { label: "Find a Store", to: "/#stores" },
-  { label: "Gift Cards", to: "/#gift-cards" },
-  { label: "Rewards", to: "/#rewards" },
-  { label: "Menu", to: "/#menu" },
+  { label: "Gift Cards", to: "/gift-cards" },
+  { label: "Rewards", to: "/rewards" },
+  { label: "Menu", to: "/menu" },
 ];
 
 const Header = () => {
