@@ -3,6 +3,14 @@ import decafImg from "@/assets/hero-decaf.jpg";
 import matchaHero from "@/assets/hero-matcha.jpg";
 import refresherHero from "@/assets/hero-refresher.jpg";
 
+// Unique drink images
+import espressoUnique from "@/assets/drinks/espresso-unique.jpg";
+import americanoUnique from "@/assets/drinks/americano-unique.jpg";
+import latteUnique from "@/assets/drinks/latte-unique.jpg";
+import cappuccinoUnique from "@/assets/drinks/cappuccino-unique.jpg";
+import mochaUnique from "@/assets/drinks/mocha-unique.jpg";
+import macchiatoUnique from "@/assets/drinks/macchiato-unique.jpg";
+
 // Seasonal images
 import honeyLavenderLatte from "@/assets/seasonal/honey-lavender-latte.jpg";
 import strawberryMatchaLatte from "@/assets/seasonal/strawberry-matcha-latte.jpg";
@@ -90,12 +98,12 @@ export const drinks: Drink[] = [
   { slug: "lemon-ginger-iced-tea", name: "Lemon Ginger Iced Tea", description: "Zesty lemon and ginger over iced tea.", image: lemonGingerIcedTea, tags: ["seasonal", "tea"], basePrice: 3.95, seasonal: true },
 
   // Coffee
-  { slug: "espresso", name: "Espresso", description: "Concentrated, rich espresso shot.", image: catEspresso, tags: ["coffee", "espresso"], basePrice: 2.5 },
-  { slug: "americano", name: "Americano", description: "Espresso topped with hot water for a smooth cup.", image: catEspresso, tags: ["coffee"], basePrice: 3.0 },
-  { slug: "latte", name: "Latte", description: "Creamy steamed milk with espresso.", image: catEspresso, tags: ["coffee"], basePrice: 4.0 },
-  { slug: "cappuccino", name: "Cappuccino", description: "Equal parts espresso, steamed milk, and foam.", image: catEspresso, tags: ["coffee"], basePrice: 4.0 },
-  { slug: "mocha", name: "Mocha", description: "Chocolate and espresso with steamed milk.", image: catEspresso, tags: ["coffee"], basePrice: 4.5 },
-  { slug: "macchiato", name: "Macchiato", description: "Espresso marked with foam.", image: catEspresso, tags: ["coffee"], basePrice: 3.5 },
+  { slug: "espresso", name: "Espresso", description: "Concentrated, rich espresso shot.", image: espressoUnique, tags: ["coffee", "espresso"], basePrice: 2.5 },
+  { slug: "americano", name: "Americano", description: "Espresso topped with hot water for a smooth cup.", image: americanoUnique, tags: ["coffee"], basePrice: 3.0 },
+  { slug: "latte", name: "Latte", description: "Creamy steamed milk with espresso.", image: latteUnique, tags: ["coffee"], basePrice: 4.0 },
+  { slug: "cappuccino", name: "Cappuccino", description: "Equal parts espresso, steamed milk, and foam.", image: cappuccinoUnique, tags: ["coffee"], basePrice: 4.0 },
+  { slug: "mocha", name: "Mocha", description: "Chocolate and espresso with steamed milk.", image: mochaUnique, tags: ["coffee"], basePrice: 4.5 },
+  { slug: "macchiato", name: "Macchiato", description: "Espresso marked with foam.", image: macchiatoUnique, tags: ["coffee"], basePrice: 3.5 },
   { slug: "cortado", name: "Cortado", description: "Equal parts espresso and warm milk.", image: catEspresso, tags: ["coffee"], basePrice: 3.5 },
   { slug: "affogato", name: "Affogato", description: "Espresso poured over vanilla ice cream.", image: catEspresso, tags: ["coffee"], basePrice: 5.0 },
 

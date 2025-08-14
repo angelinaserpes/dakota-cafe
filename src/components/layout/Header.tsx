@@ -1,6 +1,10 @@
 import { Link, NavLink } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Bean } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
+import { Bean, ShoppingCart } from "lucide-react";
+import { useState } from "react";
+import LoginDialog from "@/components/auth/LoginDialog";
+import SignUpDialog from "@/components/auth/SignUpDialog";
 
 const navItems = [
   { label: "Find a Store", to: "/#stores" },
@@ -10,6 +14,10 @@ const navItems = [
 ];
 
 const Header = () => {
+  const [loginOpen, setLoginOpen] = useState(false);
+  const [signUpOpen, setSignUpOpen] = useState(false);
+  const cartItemCount = 3; // This would come from cart context/state
+
   return (
     <header className="sticky top-0 z-40 w-full border-b bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <nav className="container mx-auto flex h-16 items-center justify-between px-4">
@@ -39,10 +47,20 @@ const Header = () => {
           </ul>
         </div>
         <div className="flex items-center gap-2">
-          <Button variant="outline" size="sm" aria-label="Log in">
+          <Link to="/cart" className="relative">
+            <Button variant="outline" size="sm" aria-label="Shopping cart">
+              <ShoppingCart className="h-4 w-4" />
+              {cartItemCount > 0 && (
+                <Badge variant="secondary" className="absolute -top-2 -right-2 h-5 w-5 flex items-center justify-center p-0 text-xs">
+                  {cartItemCount}
+                </Badge>
+              )}
+            </Button>
+          </Link>
+          <Button variant="outline" size="sm" onClick={() => setLoginOpen(true)}>
             Log In
           </Button>
-          <Button variant="hero" size="sm" aria-label="Sign up">
+          <Button variant="hero" size="sm" onClick={() => setSignUpOpen(true)}>
             Sign Up
           </Button>
         </div>
@@ -64,6 +82,9 @@ const Header = () => {
           </li>
         </ul>
       </div>
+      
+      <LoginDialog open={loginOpen} onOpenChange={setLoginOpen} />
+      <SignUpDialog open={signUpOpen} onOpenChange={setSignUpOpen} />
     </header>
   );
 };
